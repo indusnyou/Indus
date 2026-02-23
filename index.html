@@ -1,40 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Link-in-Bio | By Indux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adam Miller — Sales Executive</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fraunces:opsz,wght@8..144,700&display=swap" rel="stylesheet">
+
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#0f1724">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Basic SEO / Social preview -->
+  <meta name="description" content="Adam Miller — Sales Executive. Experience in B2B SaaS sales, pipeline growth, key accounts & revenue acceleration.">
+  <meta property="og:title" content="Adam Miller — Sales Executive">
+  <meta property="og:description" content="Experienced Sales Executive focused on transformational growth, enterprise deals, and customer success.">
 </head>
 <body>
-
-    <div class="glass-card">
-        <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
-        
-        <h1 class="name">Creator Name</h1>
-        <p class="bio">Filmmaker | Storyteller | Youtuber<br>Helping you level up your content.</p>
-
-        <div class="links-container">
-            <a href="#" class="link-btn">
-                <i class="fa-brands fa-youtube"></i> Watch Latest Video
-            </a>
-            <a href="#" class="link-btn">
-                <i class="fa-brands fa-instagram"></i> Follow on Instagram
-            </a>
-            <a href="#" class="link-btn">
-                <i class="fa-solid fa-store"></i> Buy My Presets
-            </a>
-            <a href="#" class="link-btn highlight-btn">
-                <i class="fa-solid fa-envelope"></i> Book a Consultation
-            </a>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 80 80" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#06b6d4"/>
+              <stop offset="1" stop-color="#6366f1"/>
+            </linearGradient>
+          </defs>
+          <rect width="80" height="80" rx="14" fill="url(#g)"/>
+          <text x="50%" y="54%" text-anchor="middle" fill="#fff" font-family="Fraunces, serif" font-size="34" font-weight="700">A</text>
+        </svg>
+        <div>
+          <h1 class="name">Adam Miller</h1>
+          <p class="tagline">Senior Sales Executive — B2B SaaS • Enterprise Deals • Revenue Growth</p>
         </div>
+      </div>
 
-        <div class="footer">
-            <p>Built with ❤️ by <strong>Indux™</strong></p>
-        </div>
+      <nav class="ctas">
+        <a class="btn ghost" href="#contact">Contact</a>
+        <a class="btn primary" href="resume-adam-miller.pdf" download>Download CV</a>
+      </nav>
     </div>
+  </header>
 
+  <main class="container main-grid">
+    <!-- LEFT: Profile card -->
+    <section class="profile-card" aria-labelledby="about-heading">
+      <div class="photo-wrap" aria-hidden="true">
+        <!-- stylized avatar placeholder -->
+        <svg class="avatar" viewBox="0 0 200 200" role="img">
+          <defs>
+            <linearGradient id="av" x1="0" x2="1">
+              <stop offset="0" stop-color="#06b6d4"/>
+              <stop offset="1" stop-color="#6366f1"/>
+            </linearGradient>
+          </defs>
+          <rect rx="28" width="200" height="200" fill="url(#av)"/>
+          <g transform="translate(10,20)" fill="#fff" opacity="0.96">
+            <circle cx="90" cy="60" r="34"/>
+            <rect x="40" y="110" width="100" height="18" rx="9"/>
+            <rect x="20" y="140" width="140" height="8" rx="4"/>
+            <rect x="32" y="154" width="120" height="8" rx="4"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="profile-intro">
+        <h2 id="about-heading">About</h2>
+        <p class="lead">
+          Results-driven Sales Executive with <strong>8+ years</strong> experience in enterprise B2B SaaS sales, specializing in pipeline acceleration, strategic partnerships, and closing high-value contracts. Known for consultative selling, data-driven territory planning, and building long-term customer relationships.
+        </p>
+
+        <ul class="quick-stats">
+          <li><strong>Quota Attainment:</strong> 120% avg.</li>
+          <li><strong>ACV:</strong> $35k — $250k</li>
+          <li><strong>Top Markets:</strong> Fintech, HealthTech, Martech</li>
+        </ul>
+
+        <h3>Core Strengths</h3>
+        <div class="skills-badges">
+          <span>Strategic Selling</span>
+          <span>Enterprise Negotiation</span>
+          <span>CRM: Salesforce</span>
+          <span>Pipeline Ops</span>
+          <span>Customer Success</span>
+        </div>
+
+        <h3>Contact</h3>
+        <address class="contact">
+          <div><strong>Email:</strong> <a href="mailto:adam.miller@example.com">adam.miller@example.com</a></div>
+          <div><strong>Phone:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></div>
+          <div><strong>Office:</strong> 123 Market St, Suite 500, Metropolis, NY 10001</div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adam-miller" target="_blank" rel="noopener">linkedin.com/in/adam-miller</a></div>
+        </address>
+      </div>
+    </section>
+
+    <!-- RIGHT: Detailed sections -->
+    <section class="details" aria-labelledby="work-heading">
+      <article class="panel" id="work">
+        <h2 id="work-heading">Professional Experience</h2>
+
+        <div class="timeline">
+          <div class="job">
+            <header>
+              <h3>Senior Sales Executive</h3>
+              <span class="muted">HelixCloud • 2020 — Present</span>
+            </header>
+            <p>
+              Leading cross-functional sales efforts to grow enterprise accounts across North America. Closed 12+ seven-figure deals and partnered with product & CS to design bespoke implementations that improved retention by 18%.
+            </p>
+            <ul>
+              <li>Led territory strategy that expanded ARR by $4.2M in 18 months.</li>
+              <li>Built and mentored a team of 4 AEs; established playbooks for value-based demos.</li>
+              <li>Introduced a deal review cadence that improved close rate by 22%.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <header>
+              <h3>Account Executive</h3>
+              <span class="muted">ScaleLogic • 2016 — 2020</span>
+            </header>
+            <p>
+              Focused on mid-market and upper-mid enterprise accounts; managed full sales cycle from prospecting to expansion.
+            </p>
+            <ul>
+              <li>Consistently exceeded quota with an average attainment of 130%.</li>
+              <li>Implemented CRM hygiene improvements — shortened sales cycle by 16%.</li>
+              <li>Worked closely with marketing to run ABM programs for key verticals.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel" id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skill-grid">
+          <div class="skill">
+            <label>Enterprise Sales</label>
+            <div class="meter"><span style="width:88%"></span></div>
+          </div>
+          <div class="skill">
+            <label>Pipeline Management</label>
+            <div class="meter"><span style="width:92%"></span></div>
+          </div>
+          <div class="skill">
+            <label>Negotiation</label>
+            <div class="meter"><span style="width:85%"></span></div>
+          </div>
+          <div class="skill">
+            <label>Forecasting</label>
+            <div class="meter"><span style="width:80%"></span></div>
+          </div>
+          <div class="skill">
+            <label>CRM / Tools</label>
+            <p class="muted">Salesforce, HubSpot, Outreach, Gong, ZoomInfo</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel" id="goals">
+        <h2>Future Goals</h2>
+        <ol class="goals-list">
+          <li><strong>Short-term (12 months):</strong> Scale enterprise pipeline in Healthcare vertical; close $2M in new ARR.</li>
+          <li><strong>Mid-term (2–3 years):</strong> Move into Sales Leadership — VP of Sales at a Series B/C SaaS company, build a high-performing regional GTM team.</li>
+          <li><strong>Long-term:</strong> Found & advise startups on GTM strategy; speak at industry summits about scaling enterprise sales sustainably.</li>
+        </ol>
+      </article>
+
+      <article class="panel" id="achievements">
+        <h2>Selected Achievements</h2>
+        <ul class="achievements">
+          <li>Closed largest deal in company history — $1.2M ACV (2023).</li>
+          <li>Recognized as Top Performer of the Year (2021).</li>
+          <li>Designed an onboarding bundle that reduced time-to-first-revenue by 30%.</li>
+        </ul>
+      </article>
+
+      <article class="panel" id="contact">
+        <h2>Get in touch</h2>
+        <p class="lead">Open to conversations about leadership roles, enterprise sales partnerships, and advisory positions.</p>
+
+        <form class="contact-form" action="mailto:adam.miller@example.com" method="get" onsubmit="alert('This demo form opens your email client to send a message.');">
+          <div class="row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+          </div>
+          <textarea name="message" rows="5" placeholder="Brief message or opportunity..." required></textarea>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Email Adam</button>
+            <a class="btn ghost" href="mailto:adam.miller@example.com">Or write directly</a>
+          </div>
+        </form>
+
+        <p class="muted small">Prefer a quick call? <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <time datetime="2026">2026</time> Adam Miller — Sales Executive. Built with clarity, cadence, and measurable impact.</p>
+    </div>
+  </footer>
+
+  <!-- Small JS for minor interactivity (keeps page accessible and minimal) -->
+  <script>
+    // Respect users' motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduce-motion');
+    }
+  </script>
 </body>
 </html>
