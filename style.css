@@ -1,111 +1,196 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+/* style.css
+   Professional, modern, responsive styles for Adam Miller — Sales Executive
+   Notes:
+   - Uses CSS variables for theme control
+   - Accessible contrast, print-friendly rules, and prefers-reduced-motion support
+*/
+
+/* ---------- Base & Variables ---------- */
+:root{
+  --bg: #0f1724;          /* deep navy */
+  --card: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
+  --accent-1: #06b6d4;    /* teal */
+  --accent-2: #6366f1;    /* indigo */
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --text: #e6eef8;
+  --radius: 14px;
+  --max-width: 1150px;
+  --container-pad: 24px;
+  --card-pad: 22px;
 }
 
-/* Animated Gradient Background */
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    padding: 20px;
+/* Reset & typography */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  padding:40px 0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.08), transparent 6%),
+    linear-gradient(180deg, rgba(8,10,15,1) 0%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Container */
+.container{
+  width:calc(100% - 48px);
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 var(--container-pad);
 }
 
-/* The Glassmorphism Card */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
-    backdrop-filter: blur(16px); /* The blur effect */
-    -webkit-backdrop-filter: blur(16px); /* For Safari */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 40px 30px;
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+/* Topbar */
+.topbar{
+  position:sticky;
+  top:16px;
+  z-index:30;
+  backdrop-filter: blur(6px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  margin-bottom:26px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.5);
+}
+.topbar .container{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:54px;height:54px;flex:0 0 54px}
+.name{margin:0;font-family:'Fraunces', serif;font-weight:700;font-size:20px}
+.tagline{margin:0;color:var(--muted);font-size:13px}
+
+/* CTA buttons */
+.ctas{display:flex;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  border:1px solid transparent;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.primary{
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color:white;
+  box-shadow: 0 6px 22px rgba(99,102,241,0.14), 0 2px 6px rgba(3,7,18,0.6);
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.06);
 }
 
-/* Profile Image styling */
-.profile-pic {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    object-fit: cover;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* Main grid */
+.main-grid{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:26px;
+  align-items:start;
 }
 
-/* Typography */
-.name {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+/* Profile card left */
+.profile-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:var(--card-pad);
+  box-shadow: 0 10px 30px rgba(3,6,20,0.6);
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.photo-wrap{display:flex;justify-content:center}
+.avatar{width:160px;height:160px;border-radius:12px;box-shadow:0 10px 30px rgba(8,12,20,0.7)}
+.profile-intro h2{margin:6px 0 8px 0;font-size:18px}
+.lead{color:var(--text);opacity:0.95}
+.quick-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 8px 0;padding:0;list-style:none}
+.quick-stats li{font-size:14px;color:var(--muted)}
+.skills-badges{display:flex;flex-wrap:wrap;gap:8px}
+.skills-badges span{
+  background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  padding:6px 10px;border-radius:999px;font-size:13px;border:1px solid rgba(255,255,255,0.03)
+}
+.contact{font-size:14px;color:var(--muted);margin-top:6px}
+.contact a{color:var(--text);text-decoration:underline;opacity:0.95}
+
+/* Right details */
+.details{display:flex;flex-direction:column;gap:18px}
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.5);
+}
+.panel h2{margin-top:0;font-size:18px}
+.muted{color:var(--muted);font-size:13px}
+.job{padding:12px 0;border-top:1px dashed rgba(255,255,255,0.03)}
+.job:first-of-type{border-top:0}
+.job header{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.job header h3{margin:0;font-size:16px}
+.job p{margin:8px 0 6px 0}
+.job ul{margin:8px 0 0 18px}
+
+/* Skill meters */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.skill label{display:block;font-weight:600;margin-bottom:6px}
+.meter{
+  height:10px;background:var(--glass-2);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)
+}
+.meter span{
+  display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  box-shadow:0 6px 18px rgba(99,102,241,0.12);
+  transition:width .9s cubic-bezier(.2,.9,.15,1);
 }
 
-.bio {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
-    margin-bottom: 30px;
+/* Goals and achievements */
+.goals-list{margin:0 0 0 18px}
+.achievements{margin:0 0 0 18px}
+.achievements li{margin-bottom:8px}
+
+/* Contact form */
+.contact-form{margin-top:8px;display:flex;flex-direction:column;gap:10px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.contact-form input, .contact-form textarea{
+  background:transparent;border:1px solid rgba(255,255,255,0.05);padding:10px;border-radius:8px;color:var(--text);
+  outline:none;min-width:0;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(255,255,255,0.35)}
+.form-actions{display:flex;gap:10px;align-items:center;margin-top:6px}
+
+/* Footer */
+.site-footer{margin-top:28px;color:var(--muted);font-size:14px;padding:12px;border-radius:12px;background:transparent;text-align:center}
+
+/* Responsive */
+@media (max-width:1000px){
+  .main-grid{grid-template-columns:1fr}
+  .profile-card{order:2}
+  .details{order:1}
+  .topbar{position:relative;margin-bottom:18px}
 }
 
-/* Button Styling */
-.link-btn {
-    display: block;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    text-decoration: none;
-    padding: 16px 20px;
-    border-radius: 14px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    font-size: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+/* Print-friendly */
+@media print{
+  body{background:white;color:black;padding:0}
+  .topbar, .site-footer, .ctas, .btn{display:none}
+  .container{width:100%;padding:0}
+  .profile-card, .panel{box-shadow:none;border:none;background:transparent}
+  .avatar{display:none}
+  .contact-form{display:none}
 }
 
-/* Button Hover Effect */
-.link-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Highlighted Button (For Main Call to Action) */
-.highlight-btn {
-    background: linear-gradient(90deg, #ff416c, #ff4b2b);
-    border: none;
-}
-
-.highlight-btn:hover {
-    background: linear-gradient(90deg, #ff4b2b, #ff416c);
-    box-shadow: 0 5px 20px rgba(255, 65, 108, 0.4);
-}
-
-/* Indux Footer */
-.footer {
-    margin-top: 35px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-}
+/* Reduced motion accessibility */
+.reduce-motion *{transition:none!important;animation:none!important}
